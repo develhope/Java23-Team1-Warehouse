@@ -27,3 +27,4 @@ public class Warehouse {
                 '}';
     }
 }
+// solo per addare
