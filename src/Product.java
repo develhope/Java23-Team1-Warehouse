@@ -1,13 +1,17 @@
-public class Product {
+public abstract class Product {
     private String device;
     private String brand;
     private String model;
     private String description;
     private float display;
     private float storage;
-    private float purchase;
-    private float sale;
+    private float purchasePrice;
+    private float salePrice;
     private float id;
+    
+    private Notebook[] notebooks;
+    private Tablet[] tablets;
+    private Smartphone[] smartphone;
 
     public Product(String device, String brand, String model, String description, float display, float storage,
             float purchase, float sale, float id) {
@@ -17,8 +21,8 @@ public class Product {
         this.description = description;
         this.display = display;
         this.storage = storage;
-        this.purchase = purchase;
-        this.sale = sale;
+        this.purchasePrice = purchase;
+        this.salePrice = sale;
         this.id = id;
     }
 
@@ -70,20 +74,20 @@ public class Product {
         this.storage = storage;
     }
 
-    public float getPurchase() {
-        return purchase;
+    public float getPurchasePrice() {
+        return purchasePrice;
     }
 
-    public void setPurchase(float purchase) {
-        this.purchase = purchase;
+    public void setPurchasePrice(float purchase) {
+        this.purchasePrice = purchase;
     }
 
-    public float getSale() {
-        return sale;
+    public float getSalePrice() {
+        return salePrice;
     }
 
-    public void setSale(float sale) {
-        this.sale = sale;
+    public void setSalePrice(float sale) {
+        this.salePrice = sale;
     }
 
     public float getId() {
@@ -92,5 +96,25 @@ public class Product {
 
     public void setId(float id) {
         this.id = id;
+    }
+
+    public Notebook[] getNotebooks() {
+        return notebooks;
+    }
+
+    public Tablet[] getTablets() {
+        return tablets;
+    }
+
+    public void setTablets(Tablet[] tablets) {
+        this.tablets = tablets;
+    }
+
+    public Smartphone[] getSmartphone() {
+        return smartphone;
+    }
+
+    public void setSmartphone(Smartphone[] smartphone) {
+        this.smartphone = smartphone;
     }
 }
