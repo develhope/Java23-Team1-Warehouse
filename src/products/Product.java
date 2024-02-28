@@ -1,3 +1,5 @@
+package products;
+
 public abstract class Product {
     private String device;
     private String brand;
@@ -8,21 +10,21 @@ public abstract class Product {
     private float purchasePrice;
     private float salePrice;
     private float id;
-    
+
     private Notebook[] notebooks;
     private Tablet[] tablets;
     private Smartphone[] smartphone;
 
     public Product(String device, String brand, String model, String description, float display, float storage,
-            float purchase, float sale, float id) {
+            float purchasePrice, float salePrice, float id) {
         this.device = device;
         this.brand = brand;
         this.model = model;
         this.description = description;
         this.display = display;
         this.storage = storage;
-        this.purchasePrice = purchase;
-        this.salePrice = sale;
+        this.purchasePrice = purchasePrice;
+        this.salePrice = salePrice;
         this.id = id;
     }
 
@@ -78,16 +80,16 @@ public abstract class Product {
         return purchasePrice;
     }
 
-    public void setPurchasePrice(float purchase) {
-        this.purchasePrice = purchase;
+    public void setPurchasePrice(float purchasePrice) {
+        this.purchasePrice = purchasePrice;
     }
 
     public float getSalePrice() {
         return salePrice;
     }
 
-    public void setSalePrice(float sale) {
-        this.salePrice = sale;
+    public void setSalePrice(float salePrice) {
+        this.salePrice = salePrice;
     }
 
     public float getId() {
@@ -100,6 +102,10 @@ public abstract class Product {
 
     public Notebook[] getNotebooks() {
         return notebooks;
+    }
+
+    public void setNotebooks(Notebook[] notebooks) {
+        this.notebooks = notebooks;
     }
 
     public Tablet[] getTablets() {
