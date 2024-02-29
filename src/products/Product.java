@@ -11,10 +11,6 @@ public abstract class Product {
     private float salePrice;
     private float id;
 
-    private Notebook[] notebooks;
-    private Tablet[] tablets;
-    private Smartphone[] smartphone;
-
     public Product(String device, String brand, String model, String description, float display, float storage,
             float purchasePrice, float salePrice, float id) {
         this.device = device;
@@ -98,29 +94,5 @@ public abstract class Product {
 
     public void setId(float id) {
         this.id = id;
-    }
-
-    public Notebook[] getNotebooks() {
-        return notebooks;
-    }
-
-    public void setNotebooks(Notebook[] notebooks) {
-        this.notebooks = notebooks;
-    }
-
-    public Tablet[] getTablets() {
-        return tablets;
-    }
-
-    public void setTablets(Tablet[] tablets) {
-        this.tablets = tablets;
-    }
-
-    public Smartphone[] getSmartphone() {
-        return smartphone;
-    }
-
-    public void setSmartphone(Smartphone[] smartphone) {
-        this.smartphone = smartphone;
     }
 }
