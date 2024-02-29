@@ -6,7 +6,7 @@ public class Warehouse {
     private List<Product> productsInStock;
 
 
-    public Warehouse(ArrayList<Product> arrayList) {
+    public Warehouse(Product[]products) {
         this.products = new ArrayList<Product>();
     }
 
