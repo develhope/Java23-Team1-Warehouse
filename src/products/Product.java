@@ -1,7 +1,7 @@
 package products;
 
 public abstract class Product {
-    private String device;
+    private Devices deviceType;
     private String brand;
     private String model;
     private String description;
@@ -11,9 +11,9 @@ public abstract class Product {
     private float salePrice;
     private float id;
 
-    public Product(String device, String brand, String model, String description, float display, float storage,
+    public Product(Devices deviceType, String brand, String model, String description, float display, float storage,
             float purchasePrice, float salePrice, float id) {
-        this.device = device;
+        this.deviceType = deviceType;
         this.brand = brand;
         this.model = model;
         this.description = description;
@@ -24,12 +24,12 @@ public abstract class Product {
         this.id = id;
     }
 
-    public String getDevice() {
-        return device;
+    public Devices getDeviceType() {
+        return deviceType;
     }
 
-    public void setDevice(String device) {
-        this.device = device;
+    public void setDeviceType(Devices deviceType) {
+        this.deviceType = deviceType;
     }
 
     public String getBrand() {
