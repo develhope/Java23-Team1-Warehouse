@@ -1,6 +1,6 @@
 package products;
 
-enum Product {
+enum products {
     NOTEBOOK,
     SMARTPHONE,
     TABLET
