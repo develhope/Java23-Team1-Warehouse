@@ -1,6 +1,6 @@
 package products;
 
-public abstract class Product {
+public class Product {
     private Devices deviceType;
     private String brand;
     private String model;
@@ -9,18 +9,10 @@ public abstract class Product {
     private float storage;
     private float purchasePrice;
     private float salePrice;
-    private float id;
+    private int id;
 
-    public Product(
-            Devices deviceType,
-            String brand,
-            String model,
-            String description,
-            float display,
-            float storage,
-            float purchasePrice,
-            float salePrice,
-            float id) {
+    public Product(Devices deviceType, String brand, String model, String description, float display, float storage,
+                   float purchasePrice, float salePrice, int id) {
         this.deviceType = deviceType;
         this.brand = brand;
         this.model = model;
@@ -96,11 +88,11 @@ public abstract class Product {
         this.salePrice = salePrice;
     }
 
-    public float getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(float id) {
+    public void setId(int id) {
         this.id = id;
     }
 }
