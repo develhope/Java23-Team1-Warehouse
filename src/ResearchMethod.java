@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+
 import products.Devices;
 import products.Product;
 
@@ -15,7 +14,7 @@ abstract class ResearchMethod {
         this.scanner = scanner;
     }
 
-    void searchByType(List<Product> stockDevices, String typeResearch) {
+    public static void searchByType(List<Product> stockDevices, String typeResearch) {
         List<Product> matchingDevices = new ArrayList<Product>();
         Devices researchTypeEnum = Devices.valueOf(typeResearch.toUpperCase());
         if (stockDevices.isEmpty()) {
@@ -28,5 +27,20 @@ abstract class ResearchMethod {
             }
         }
         printDevices(matchingDevices);
+    }
+
+    public static void printDevices(List<Product> products) {
+        for (Product product : products) {
+            System.out.println("Device: " + product.getDeviceType() +
+                    "\nBrand: " + product.getBrand() +
+                    "\nModel: " + product.getModel() +
+                    "\nDescription: " + product.getDescription() +
+                    "\nDisplay: " + product.getDisplay() +
+                    "\nStorage: " + product.getStorage() +
+                    "\nPurchase price: " + product.getPurchasePrice() +
+                    "\nSale price: " + product.getSalePrice() +
+                    "\nID: " + product.getId() +
+                    "\n \n");
+        }
     }
 }
