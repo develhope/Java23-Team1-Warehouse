@@ -11,8 +11,16 @@ public abstract class Product {
     private float salePrice;
     private float id;
 
-    public Product(Devices deviceType, String brand, String model, String description, float display, float storage,
-            float purchasePrice, float salePrice, float id) {
+    public Product(
+            Devices deviceType,
+            String brand,
+            String model,
+            String description,
+            float display,
+            float storage,
+            float purchasePrice,
+            float salePrice,
+            float id) {
         this.deviceType = deviceType;
         this.brand = brand;
         this.model = model;
