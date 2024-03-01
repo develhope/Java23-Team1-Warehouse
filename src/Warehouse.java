@@ -5,7 +5,7 @@ import java.util.List;
 public class Warehouse {
     private List<Product> productsInStock = new ArrayList<Product>();
     public void addProductToStock(Product product) {
-        productsInStock.add(device);
+        productsInStock.add(product);
     }
 
     public List<Product> getProductsInStock() {
