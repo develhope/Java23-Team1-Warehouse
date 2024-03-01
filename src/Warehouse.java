@@ -1,29 +1,16 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Warehouse {
-    private Product[] stock;
-    private int emptySpace;
-
-    public Warehouse(int maxProducts) {
-        this.stock = new Product[maxProducts];
-        this.emptySpace = 0;
-
+    private List<Product> productsInStock = new ArrayList<Product>();
+    public void addProductToStock(Product product) {
+        productsInStock.add(product);
     }
 
-    public void addToStock(Product product) {
-        stock[emptySpace] = product;
-        emptySpace++;
-    }
-
-    public Product[] getStock() {
-        return stock;
-    }
-
-    @Override
-    public String toString() {
-        return "Warehouse{" +
-                "stock=" + Arrays.toString(stock) +
-                ", emptySpace=" + emptySpace +
-                '}';
+    public List<Product> getProductsInStock() {
+        return productsInStock;
     }
 }
+
+
