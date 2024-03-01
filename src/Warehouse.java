@@ -12,9 +12,3 @@ public class Warehouse {
         return productsInStock;
     }
 }
-<<<<<<< HEAD
-// solo per addare
-=======
-
-
->>>>>>> e3989f4103fc1cae177e58cdc6e0464198a61fd5
