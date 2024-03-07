@@ -17,4 +17,12 @@ public class Cart {
     public void setProductsInCart(List<Product> productsInCart) {
         this.productsInCart = productsInCart;
     }
+
+    public float getFinalPrice() {
+        float finalPrice = 0;
+        for (Product product : productsInCart) {
+            finalPrice += product.getSalePrice();
+        }
+        return finalPrice;
+    }
 }
