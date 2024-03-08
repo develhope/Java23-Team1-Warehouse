@@ -21,5 +21,6 @@ public class Test {
         products.add(notebook1);
         products.add(notebook2);
         ResearchMethod.printDevices(products);
+        // commit
     }
 }

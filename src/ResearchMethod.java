@@ -42,6 +42,8 @@ abstract class ResearchMethod {
         printDevices(productsInsideRange);
     }
 
+    public void searchByProduct
+
     public static void printDevices(List<Product> products) {
         for (Product product : products) {
             System.out.println("Device: " + product.getDeviceType() +
