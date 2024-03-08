@@ -5,7 +5,7 @@ import products.Product;
 
 abstract class ResearchMethod {
 
-    private Warehouse warehouse;
+    private final Warehouse warehouse;
 
     private Scanner scanner;
 
@@ -14,10 +14,10 @@ abstract class ResearchMethod {
         this.scanner = scanner;
     }
 
-    public static void searchByType(List<Product> stockDevices, String typeResearch) {
+    public void searchByType(List<Product> stockDevices, String typeResearch) {
         List<Product> matchingDevices = new ArrayList<Product>();
         Devices researchTypeEnum = Devices.valueOf(typeResearch.toUpperCase());
-        if (stockDevices.isEmpty()) {
+        if (warehouse.getProductsInStock().isEmpty()) {
             System.out.println("No available devices");
         } else {
             for (Product product : stockDevices) {
@@ -27,6 +27,19 @@ abstract class ResearchMethod {
             }
         }
         printDevices(matchingDevices);
+    }
+
+    public void searchByPriceRange(String minPrice, String maxPrice) {
+        if (warehouse.getProductsInStock().isEmpty()) {
+            System.out.println("The warehouse is currently out of stock!");
+        }
+        int minPriceResearched = Integer.parseInt(minPrice);
+        int maxPriceResearched = Integer.parseInt(maxPrice);
+        if (minPriceResearched > maxPriceResearched) {
+            System.out.println("Minimum price can't be higher that maximum price!");
+        }
+        List<Product> productsInsideRange = warehouse.filterBySaleRange(minPriceResearched, maxPriceResearched);
+        printDevices(productsInsideRange);
     }
 
     public static void printDevices(List<Product> products) {
