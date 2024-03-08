@@ -2,6 +2,7 @@ import products.Product;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Warehouse {
 
@@ -18,10 +19,22 @@ public class Warehouse {
         return productsInStock;
     }
 
-    public List<Product> filterByAttribute(String input, String typeResearched){
+    public List<Product> filterByAttribute(String input, String typeResearched) {
         List<Product> matchingDevices = new ArrayList<>();
 
         return matchingDevices;
+    }
+
+    public List<Product> filterByModel(List<Product> productsInStock, String model) {
+        List<Product> devicesFilteredByModel = new ArrayList<>();
+
+        for (Product device : productsInStock) {
+            if (Objects.equals(device.getModel(), model)) {
+                devicesFilteredByModel.add(device);
+            }
+
+        }
+        return devicesFilteredByModel;
     }
 
     public List<Product> filterBySaleRange(Integer minPrice, Integer maxPrice) {
