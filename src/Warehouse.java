@@ -60,4 +60,8 @@ public class Warehouse {
         }
         return matchingDevices;
     }
+
+    public boolean isEmpty() {
+        return productsInStock.isEmpty();
+    }
 }

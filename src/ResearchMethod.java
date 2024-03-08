@@ -14,7 +14,7 @@ public class ResearchMethod {
     public void searchByType(List<Product> stockDevices, String typeResearch) {
         List<Product> matchingDevices = new ArrayList<Product>();
         Devices researchTypeEnum = Devices.valueOf(typeResearch.toUpperCase());
-        if (warehouse.getProductsInStock().isEmpty()) {
+        if (warehouse.isEmpty()) {
             System.out.println("No available devices");
         } else {
             for (Product product : stockDevices) {
@@ -27,7 +27,7 @@ public class ResearchMethod {
     }
 
     public void searchByPriceRange(String minPrice, String maxPrice) {
-        if (warehouse.getProductsInStock().isEmpty()) {
+        if (warehouse.isEmpty()) {
             System.out.println("The warehouse is currently out of stock!");
         }
         int minPriceResearched = Integer.parseInt(minPrice);
