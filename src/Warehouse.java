@@ -48,18 +48,7 @@ public class Warehouse {
         }
         return matchingDevices;
     }
-//metodo che filtra una lista di prodotti per un determinato modello e restituisce una lista con i prodotti corrispondenti a quel modello.
-    public static List<Product> filterByModel(List<Product> productsInStock, String model) {
-        List<Product> devicesFilteredByModel = new ArrayList<>();
 
-        for (Product device : productsInStock) {
-            if (Objects.equals(device.getModel(), model)) {
-                devicesFilteredByModel.add(device);
-            }
-
-        }
-        return devicesFilteredByModel;
-    }
 
     public List<Product> filterBySaleRange(Integer minPrice, Integer maxPrice) {
         if (minPrice == null || maxPrice == null) {
