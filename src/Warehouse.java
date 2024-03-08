@@ -24,7 +24,7 @@ public class Warehouse {
 
         return matchingDevices;
     }
-
+//metodo che filtra una lista di prodotti per un determinato modello e restituisce una lista con i prodotti corrispondenti a quel modello.
     public List<Product> filterByModel(List<Product> productsInStock, String model) {
         List<Product> devicesFilteredByModel = new ArrayList<>();
 
