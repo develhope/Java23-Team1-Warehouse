@@ -62,4 +62,29 @@ public class ResearchMethod {
                     "\n \n");
         }
     }
+    public void searchBySalePrice(float minPrice, float maxPrice) {
+        if (warehouse.getProductsInStock().isEmpty()) {
+            System.out.println("The warehouse is currently out of stock!");
+            return;
+        }
+
+        if (minPrice > maxPrice) {
+            System.out.println("Minimum price cannot be higher than maximum price!");
+            return;
+        }
+
+        List<Product> matchingDevices = new ArrayList<>();
+        for (Product product : warehouse.getProductsInStock()) {
+            float salePrice = product.getSalePrice();
+            if (salePrice >= minPrice && salePrice <= maxPrice) {
+                matchingDevices.add(product);
+            }
+        }
+
+        if (matchingDevices.isEmpty()) {
+            System.out.println("No products found within the specified price range.");
+        } else {
+            printDevices(matchingDevices);
+        }
+    }
 }
