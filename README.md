@@ -1,4 +1,4 @@
-## Warehouse
+## ResearchMethod
 Si scriva un programma in Java per la gestione di un magazzino. 
 
  - Il programma deve leggere da input stringhe multiple che contengono i prodotti da immagazzinare. (Usare Scanner)

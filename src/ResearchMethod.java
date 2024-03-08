@@ -38,9 +38,8 @@ abstract class ResearchMethod {
         if (minPriceResearched > maxPriceResearched) {
             System.out.println("Minimum price can't be higher that maximum price!");
         }
-        List<Product> productsInsideRange = warehouse.getMatchingSaleRange(minPriceResearched, maxPriceResearched);
+        List<Product> productsInsideRange = warehouse.filterBySaleRange(minPriceResearched, maxPriceResearched);
         printDevices(productsInsideRange);
-
     }
 
     public static void printDevices(List<Product> products) {

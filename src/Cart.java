@@ -17,5 +17,4 @@ public class Cart {
     public void setProductsInCart(List<Product> productsInCart) {
         this.productsInCart = productsInCart;
     }
-
 }

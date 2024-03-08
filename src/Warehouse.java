@@ -18,13 +18,13 @@ public class Warehouse {
         return productsInStock;
     }
 
-    public List<Product> getMatchingResearch (String input, String typeResearched){
+    public List<Product> filterByAttribute(String input, String typeResearched){
         List<Product> matchingDevices = new ArrayList<>();
 
         return matchingDevices;
     }
 
-    public List<Product> getMatchingSaleRange(Integer minPrice, Integer maxPrice) {
+    public List<Product> filterBySaleRange(Integer minPrice, Integer maxPrice) {
         if (minPrice == null || maxPrice == null) {
             return null;
         }
