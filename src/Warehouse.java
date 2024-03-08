@@ -1,3 +1,4 @@
+import products.Devices;
 import products.Product;
 
 import java.util.ArrayList;
@@ -20,7 +21,30 @@ public class Warehouse {
 
     public List<Product> filterByAttribute(String input, String typeResearched){
         List<Product> matchingDevices = new ArrayList<>();
+        String inputToLowerCase = input.toLowerCase();
+        for (Product product : productsInStock) {
+            String researchToLowerCase = "";
+            switch (typeResearched) {
+                case "brand":
+                    researchToLowerCase = product.getBrand().toLowerCase();
+                    break;
 
+                case "model":
+                    researchToLowerCase = product.getModel().toLowerCase();
+                    break;
+
+                case "device":
+                    researchToLowerCase = String.valueOf(product.getDeviceType()).toLowerCase();
+                    break;
+
+                default:
+                    break;
+
+            }
+            if (inputToLowerCase.equals(researchToLowerCase)) {
+                matchingDevices.add(product);
+            }
+        }
         return matchingDevices;
     }
 

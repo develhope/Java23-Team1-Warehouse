@@ -3,15 +3,12 @@ import java.util.*;
 import products.Devices;
 import products.Product;
 
-abstract class ResearchMethod {
+public class ResearchMethod {
 
     private final Warehouse warehouse;
 
-    private Scanner scanner;
-
-    public ResearchMethod(Warehouse warehouse, Scanner scanner) {
+    public ResearchMethod(Warehouse warehouse) {
         this.warehouse = warehouse;
-        this.scanner = scanner;
     }
 
     public void searchByType(List<Product> stockDevices, String typeResearch) {
@@ -42,7 +39,16 @@ abstract class ResearchMethod {
         printDevices(productsInsideRange);
     }
 
-    public static void printDevices(List<Product> products) {
+    public void searchByBrand (String input) {
+        if (warehouse.getProductsInStock().isEmpty()) {
+            System.out.println("The warehouse is currently out of stock!");
+        }
+        List<Product> matchingDevices = new ArrayList<Product>();
+        matchingDevices = warehouse.filterByAttribute(input, "brand");
+        printDevices(matchingDevices);
+    }
+
+    public void printDevices(List<Product> products) {
         for (Product product : products) {
             System.out.println("Device: " + product.getDeviceType() +
                     "\nBrand: " + product.getBrand() +
