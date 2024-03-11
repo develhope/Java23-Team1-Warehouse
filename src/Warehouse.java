@@ -3,6 +3,7 @@ import products.Product;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Warehouse {
 
@@ -19,7 +20,7 @@ public class Warehouse {
         return productsInStock;
     }
 
-    public List<Product> filterByAttribute(String input, String typeResearched){
+    public List<Product> filterByAttribute(String input, String typeResearched) {
         List<Product> matchingDevices = new ArrayList<>();
         String inputToLowerCase = input.toLowerCase();
         for (Product product : productsInStock) {
@@ -48,6 +49,7 @@ public class Warehouse {
         return matchingDevices;
     }
 
+
     public List<Product> filterBySaleRange(Integer minPrice, Integer maxPrice) {
         if (minPrice == null || maxPrice == null) {
             return null;
@@ -60,6 +62,7 @@ public class Warehouse {
         }
         return matchingDevices;
     }
+
 
     public boolean isEmpty() {
         return productsInStock.isEmpty();
