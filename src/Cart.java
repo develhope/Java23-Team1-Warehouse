@@ -17,4 +17,13 @@ public class Cart {
     public void setProductsInCart(List<Product> productsInCart) {
         this.productsInCart = productsInCart;
     }
+
+    public double getTotalPrice() {
+        double totalPrice = 0.0;
+        for (Product product : productsInCart) {
+            totalPrice += product.getSalePrice();
+        }
+        return totalPrice;
+    }
 }
+    

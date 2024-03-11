@@ -47,6 +47,14 @@ public class ResearchMethod {
         matchingDevices = warehouse.filterByAttribute(input, "brand");
         printDevices(matchingDevices);
     }
+    public void searchByModel (String input) {
+        if (warehouse.getProductsInStock().isEmpty()) {
+            System.out.println("The warehouse is currently out of stock!");
+        }
+        List<Product> matchingDevices = new ArrayList<Product>();
+        matchingDevices = warehouse.filterByAttribute(input, "model");
+        printDevices(matchingDevices);
+    }
 
     public void printDevices(List<Product> products) {
         for (Product product : products) {
