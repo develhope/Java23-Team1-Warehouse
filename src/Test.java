@@ -16,7 +16,7 @@ public class Test {
         Product smartphone2 = new Product(Devices.SMARTPHONE, "Xiaomi", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product tablet2 = new Product(Devices.TABLET, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product notebook2 = new Product(Devices.NOTEBOOK, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
-        List<Product> productsInStock = new ArrayList<>();
+         List<Product> productsInStock = new Warehouse(new ArrayList<>()).getProductsInStock();
         productsInStock.add(smartphone1);
         productsInStock.add(smartphone2);
         productsInStock.add(tablet1);
