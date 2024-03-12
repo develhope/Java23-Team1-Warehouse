@@ -64,7 +64,7 @@ public class ResearchMethod {
                     "\n \n");
         }
     }
-    public void searchBySalePrice(float minPrice, float maxPrice) {
+    public void searchByPurchasePrice(float minPrice, float maxPrice) {
         if (warehouse.getProductsInStock().isEmpty()) {
             System.out.println("The warehouse is currently out of stock!");
             return;
