@@ -10,6 +10,21 @@ public class Cart {
         this.productsInCart = new ArrayList<>();
     }
 
+    //metodo geralizzato che verifica prima se si può finalizzare la vendita
+    // e poi procede svuotando il carrello e rimuovendo i device venduti dal magazzino;
+
+    public static void finalizeSellingProcess(boolean paymentCheck, List<Product> productsInCart, List<Product> productsInStock) throws IllegalAccessException {
+        if (paymentCheck) {
+
+            productsInStock.removeAll(productsInCart);
+            productsInCart.clear();
+        } else {
+            throw new IllegalAccessException("you must first complete a form of payment");
+        }
+
+    }
+
+
     public List<Product> getProductsInCart() {
         return productsInCart;
     }
