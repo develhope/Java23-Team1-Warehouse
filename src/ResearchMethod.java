@@ -11,15 +11,15 @@ public class ResearchMethod {
         this.warehouse = warehouse;
     }
 
-    public void searchByType(String input) {
+    public List<Product> searchByType(String input) {
         if (warehouse.isEmpty()) {
             System.out.println("No available devices");
         }
         List<Product> matchingDevices = warehouse.filterByAttribute(input, "device");
-        printDevices(matchingDevices);
+        return matchingDevices;
     }
 
-    public void searchByPriceRange(String minPrice, String maxPrice) {
+    public List<Product> searchByPriceRange(String minPrice, String maxPrice) {
         if (warehouse.isEmpty()) {
             System.out.println("The warehouse is currently out of stock!");
         }
@@ -29,7 +29,7 @@ public class ResearchMethod {
             System.out.println("Minimum price can't be higher that maximum price!");
         }
         List<Product> matchingDevices = warehouse.filterBySaleRange(minPriceResearched, maxPriceResearched);
-        printDevices(matchingDevices);
+        return matchingDevices;
     }
 
     public void searchByBrand(String input) {
