@@ -28,6 +28,9 @@ public class Cart {
     public List<Product> getProductsInCart() {
         return productsInCart;
     }
+    public void addProductInCart(Product product) {
+        productsInCart.add(product);
+    }
 
     public void setProductsInCart(List<Product> productsInCart) {
         this.productsInCart = productsInCart;
@@ -39,6 +42,13 @@ public class Cart {
             totalPrice += product.getSalePrice();
         }
         return totalPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "productsInCart=" + productsInCart +
+                '}';
     }
 }
     

@@ -7,13 +7,13 @@ import java.util.Objects;
 
 public class Warehouse {
 
-    private List<Product> productsInStock;
+    private final List<Product> productsInStock;
 
     public void addProductToStock(Product product) {
         productsInStock.add(product);
     }
 
-    public Warehouse(List<Product> productsInStock) {
+    public Warehouse() {
         this.productsInStock = new ArrayList<Product>();
     }
 
@@ -67,5 +67,12 @@ public class Warehouse {
 
     public boolean isEmpty() {
         return productsInStock.isEmpty();
+    }
+
+    @Override
+    public String toString() {
+        return "Warehouse{" +
+                "productsInStock=" + productsInStock +
+                '}';
     }
 }

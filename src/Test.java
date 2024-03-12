@@ -16,19 +16,21 @@ public class Test {
         Product smartphone2 = new Product(Devices.SMARTPHONE, "Xiaomi", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product tablet2 = new Product(Devices.TABLET, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product notebook2 = new Product(Devices.NOTEBOOK, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
-         List<Product> productsInStock = new Warehouse(new ArrayList<>()).getProductsInStock();
-        productsInStock.add(smartphone1);
-        productsInStock.add(smartphone2);
-        productsInStock.add(tablet1);
-        productsInStock.add(tablet2);
-        productsInStock.add(notebook1);
-        productsInStock.add(notebook2);
-        List<Product> productsInCart = new ArrayList<>();
-        productsInCart.add(smartphone1);
-        productsInCart.add(tablet1);
-        productsInCart.add(notebook1);
+        Warehouse productsInStock = new Warehouse();
+        productsInStock.addProductToStock(smartphone1);
+        productsInStock.addProductToStock(smartphone2);
+        productsInStock.addProductToStock(tablet1);
+        productsInStock.addProductToStock(tablet2);
+        productsInStock.addProductToStock(notebook1);
+        productsInStock.addProductToStock(notebook2);
+
+
+        Cart productsInCart = new Cart();
+        productsInCart.addProductInCart(smartphone1);
+        productsInCart.addProductInCart(tablet1);
+        productsInCart.addProductInCart(notebook1);
         boolean paymentCheck = true;
-        Cart.finalizeSellingProcess(paymentCheck, productsInCart, productsInStock);
+        Cart.finalizeSellingProcess(paymentCheck, productsInCart.getProductsInCart(), productsInStock.getProductsInStock());
         System.out.println(productsInStock);
         System.out.println(productsInCart);
 
