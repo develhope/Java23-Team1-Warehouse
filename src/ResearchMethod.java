@@ -32,7 +32,7 @@ public class ResearchMethod {
         printDevices(matchingDevices);
     }
 
-    public void searchByBrand (String input) {
+    public void searchByBrand(String input) {
         if (warehouse.isEmpty()) {
             System.out.println("The warehouse is currently out of stock!");
         }
@@ -40,13 +40,14 @@ public class ResearchMethod {
         matchingDevices = warehouse.filterByAttribute(input, "brand");
         printDevices(matchingDevices);
     }
-    public void searchByModel (String input) {
+
+    public List<Product> searchByModel(String input) {
         if (warehouse.isEmpty()) {
             System.out.println("The warehouse is currently out of stock!");
         }
         List<Product> matchingDevices = new ArrayList<Product>();
         matchingDevices = warehouse.filterByAttribute(input, "model");
-        printDevices(matchingDevices);
+        return matchingDevices;
     }
 
     public void printDevices(List<Product> products) {
