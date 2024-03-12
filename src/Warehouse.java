@@ -64,4 +64,7 @@ public class Warehouse {
     }
 
 
+    public boolean isEmpty() {
+        return productsInStock.isEmpty();
+    }
 }
