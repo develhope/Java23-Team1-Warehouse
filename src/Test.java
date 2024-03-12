@@ -16,6 +16,15 @@ public class Test {
         Product tablet2 = new Product(Devices.TABLET, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product notebook2 = new Product(Devices.NOTEBOOK, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         List<Product> products = new ArrayList<>();
+        Warehouse warehouse = new Warehouse();
+        ResearchMethod researchMethod = new ResearchMethod(warehouse);
+        warehouse.addProductToStock(tablet1);
+        warehouse.addProductToStock(tablet2);
+        warehouse.addProductToStock(smartphone1);
+        warehouse.addProductToStock(smartphone2);
+        warehouse.addProductToStock(notebook1);
+        warehouse.addProductToStock(notebook2);
+        researchMethod.searchByBrand("SAMSUNG");
         products.add(smartphone1);
         products.add(smartphone2);
         products.add(tablet1);
