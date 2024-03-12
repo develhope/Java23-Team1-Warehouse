@@ -7,13 +7,14 @@ import java.util.Objects;
 
 public class Warehouse {
 
-    private List<Product> productsInStock = new ArrayList<Product>();
+    private List<Product> productsInStock;
 
     public void addProductToStock(Product product) {
         productsInStock.add(product);
     }
 
-    public Warehouse() {
+    public Warehouse(List<Product> productsInStock) {
+        this.productsInStock = new ArrayList<Product>();
     }
 
     public List<Product> getProductsInStock() {
@@ -64,4 +65,7 @@ public class Warehouse {
     }
 
 
+    public boolean isEmpty() {
+        return productsInStock.isEmpty();
+    }
 }
