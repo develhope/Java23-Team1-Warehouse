@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 
 import products.Product;
@@ -25,5 +26,20 @@ public class Cart {
         }
         return totalPrice;
     }
+
+    // RIMOZIONE DI UN ELEMENTO DAL CARRELLO TRAMITE ID
+    public List<Product> removeProductsInCartById() {
+        if (productsInCart.isEmpty()) {
+            System.out.println("The cart is empty.");
+            return null;
+        } else {
+            List<Product> updatedWareHouse =  ((Cart) productsInCart).getProductsInCart();
+            if (updatedWareHouse.isEmpty()) {
+                System.out.println("The cart is empty.");
+                return null;
+            } else {
+                return updatedWareHouse;
+            }
+        }
+    }
 }
-    

@@ -1,5 +1,7 @@
 package products;
 
+import java.util.List;
+
 public class Product {
     private Devices deviceType;
     private String brand;
