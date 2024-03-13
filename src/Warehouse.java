@@ -1,31 +1,37 @@
-import products.Devices;
 import products.Product;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Warehouse {
 
-    private  List<Product> productsInStock;
+
+    private  List<Product> devices;
+    private final Cart cart;
+
+    public void finalizeSellingProcess (boolean paymentCheck){
+        devices.removeAll(cart.getDevices());
+        cart.getDevices().clear();
+    }
 
 
     public void addProductToStock(Product product) {
-        productsInStock.add(product);
+        devices.add(product);
     }
 
-    public Warehouse() {
-        this.productsInStock = new ArrayList<Product>();
+    public Warehouse(Cart cart) {
+        this.devices = new ArrayList<Product>();
+        this.cart= cart;
     }
 
     public List<Product> getProductsInStock() {
-        return productsInStock;
+        return devices;
     }
 
     public List<Product> filterByAttribute(String input, String typeResearched) {
         List<Product> matchingDevices = new ArrayList<>();
         String inputToLowerCase = input.toLowerCase();
-        for (Product product : productsInStock) {
+        for (Product product : devices) {
             String researchToLowerCase = "";
             switch (typeResearched) {
                 case "brand":
@@ -57,7 +63,7 @@ public class Warehouse {
             return null;
         }
         List<Product> matchingDevices = new ArrayList<>();
-        for (Product product : productsInStock) {
+        for (Product product : devices) {
             if (product.getSalePrice() <= maxPrice && product.getSalePrice() >= minPrice) {
                 matchingDevices.add(product);
             }
@@ -67,13 +73,13 @@ public class Warehouse {
 
 
     public boolean isEmpty() {
-        return productsInStock.isEmpty();
+        return devices.isEmpty();
     }
 
     @Override
     public String toString() {
         return "Warehouse{" +
-                "productsInStock=" + productsInStock +
+                "productsInStock=" + devices +
                 '}';
     }
 }
