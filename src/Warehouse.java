@@ -68,4 +68,17 @@ public class Warehouse {
     public boolean isEmpty() {
         return productsInStock.isEmpty();
     }
+
+    public List<Product> filterByPurchaseRange(Integer minPrice, Integer maxPrice) {
+        if (minPrice == null || maxPrice == null) {
+            return null;
+        }
+        List<Product> matchingDevices = new ArrayList<>();
+        for (Product product : productsInStock) {
+            if (product.getPurchasePrice() <= maxPrice && product.getPurchasePrice() >= minPrice) {
+                matchingDevices.add(product);
+            }
+        }
+        return matchingDevices;
+    }
 }
