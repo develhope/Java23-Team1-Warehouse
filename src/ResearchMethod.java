@@ -77,8 +77,8 @@ public class ResearchMethod {
 
         List<Product> matchingDevices = new ArrayList<>();
         for (Product product : warehouse.getProductsInStock()) {
-            float salePrice = product.getSalePrice();
-            if (salePrice >= minPrice && salePrice <= maxPrice) {
+            float purchasePrice = product.getPurchasePrice();
+            if (purchasePrice >= minPrice && purchasePrice <= maxPrice) {
                 matchingDevices.add(product);
             }
         }
