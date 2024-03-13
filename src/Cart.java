@@ -13,21 +13,20 @@ public class Cart {
     //metodo geralizzato che verifica prima se si può finalizzare la vendita
     // e poi procede svuotando il carrello e rimuovendo i device venduti dal magazzino;
 
-    public static void finalizeSellingProcess(boolean paymentCheck, List<Product> productsInCart, List<Product> productsInStock) throws IllegalAccessException {
+    public static void finalizeSellingProcess(boolean paymentCheck, Warehouse warehouse, Cart cart) {
         if (paymentCheck) {
-
-            productsInStock.removeAll(productsInCart);
-            productsInCart.clear();
+            warehouse.getProductsInStock().removeAll(cart.getProductsInCart());
+            cart.getProductsInCart().clear();
         } else {
-            throw new IllegalAccessException("you must first complete a form of payment");
+            System.out.println("you must first complete a form of payment");
         }
-
     }
 
 
     public List<Product> getProductsInCart() {
         return productsInCart;
     }
+
     public void addProductInCart(Product product) {
         productsInCart.add(product);
     }

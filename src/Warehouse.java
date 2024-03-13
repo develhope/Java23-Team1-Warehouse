@@ -7,7 +7,8 @@ import java.util.Objects;
 
 public class Warehouse {
 
-    private final List<Product> productsInStock;
+    private  List<Product> productsInStock;
+
 
     public void addProductToStock(Product product) {
         productsInStock.add(product);

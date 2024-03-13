@@ -9,7 +9,7 @@ public class Test {
     private ResearchMethod researchMethod;
     private Warehouse warehouse;
 
-    public static void main(String[] args) throws IllegalAccessException {
+    public static void main(String[] args)  {
         Product smartphone1 = new Product(Devices.SMARTPHONE, "Xiaomi", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product tablet1 = new Product(Devices.TABLET, "Apple", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product notebook1 = new Product(Devices.NOTEBOOK, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
@@ -29,8 +29,8 @@ public class Test {
         productsInCart.addProductInCart(smartphone1);
         productsInCart.addProductInCart(tablet1);
         productsInCart.addProductInCart(notebook1);
-        boolean paymentCheck = true;
-        Cart.finalizeSellingProcess(paymentCheck, productsInCart.getProductsInCart(), productsInStock.getProductsInStock());
+        boolean paymentCheck = false;
+        Cart.finalizeSellingProcess(paymentCheck,productsInStock,productsInCart);
         System.out.println(productsInStock);
         System.out.println(productsInCart);
 
