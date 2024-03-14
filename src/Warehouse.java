@@ -86,7 +86,7 @@ public class Warehouse {
             return null;
         }
         List<Product> matchingDevices = new ArrayList<>();
-        for (Product product : productsInStock) {
+        for (Product product : devices) {
             if (product.getPurchasePrice() <= maxPrice && product.getPurchasePrice() >= minPrice) {
                 matchingDevices.add(product);
             }
