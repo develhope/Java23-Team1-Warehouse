@@ -19,7 +19,7 @@ public class ResearchMethod {
         return matchingDevices;
     }
 
-    public List<Product> searchByPriceRange(String minPrice, String maxPrice) {
+    public List<Product> searchBySalePriceRange(String minPrice, String maxPrice) {
         if (warehouse.isEmpty()) {
             System.out.println("The warehouse is currently out of stock!");
         }
@@ -32,13 +32,13 @@ public class ResearchMethod {
         return matchingDevices;
     }
 
-    public void searchByBrand(String input) {
+    public List<Product> searchByBrand(String input) {
         if (warehouse.isEmpty()) {
             System.out.println("The warehouse is currently out of stock!");
         }
         List<Product> matchingDevices = new ArrayList<Product>();
         matchingDevices = warehouse.filterByAttribute(input, "brand");
-        printDevices(matchingDevices);
+        return matchingDevices;
     }
 
     public List<Product> searchByModel(String input) {
@@ -63,5 +63,17 @@ public class ResearchMethod {
                     "\nID: " + product.getId() +
                     "\n \n");
         }
+    }
+    public List<Product> searchByPurchasePriceRange(String minPrice, String maxPrice) {
+        if (warehouse.isEmpty()) {
+            System.out.println("The warehouse is currently out of stock!");
+        }
+        int minPriceResearched = Integer.parseInt(minPrice);
+        int maxPriceResearched = Integer.parseInt(maxPrice);
+        if (minPriceResearched > maxPriceResearched) {
+            System.out.println("Minimum price can't be higher that maximum price!");
+        }
+        List<Product> matchingDevices = warehouse.filterByPurchaseRange(minPriceResearched, maxPriceResearched);
+        return matchingDevices;
     }
 }
