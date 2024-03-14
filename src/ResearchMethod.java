@@ -64,7 +64,8 @@ public class ResearchMethod {
                     "\n \n");
         }
     }
-
+    // Method that take a filter as parameter and cycle through the warehouse. If the product match the filter parameter and return true,
+    //it adds the product to a new list.
     public List<Product> search(ProductFilter productFilter) {
         List<Product> matchingDevices = new ArrayList<>();
         for (Product product : warehouse.getProductsInStock()) {
