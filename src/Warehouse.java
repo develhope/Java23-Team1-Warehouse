@@ -80,4 +80,17 @@ public class Warehouse {
                 "productsInStock=" + devices +
                 '}';
     }
+
+    public List<Product> filterByPurchaseRange(Integer minPrice, Integer maxPrice) {
+        if (minPrice == null || maxPrice == null) {
+            return null;
+        }
+        List<Product> matchingDevices = new ArrayList<>();
+        for (Product product : devices) {
+            if (product.getPurchasePrice() <= maxPrice && product.getPurchasePrice() >= minPrice) {
+                matchingDevices.add(product);
+            }
+        }
+        return matchingDevices;
+    }
 }
