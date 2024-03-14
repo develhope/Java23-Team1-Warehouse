@@ -11,15 +11,15 @@ public class ResearchMethod {
         this.warehouse = warehouse;
     }
 
-    public void searchByType(String input) {
+    public List<Product> searchByType(String input) {
         if (warehouse.isEmpty()) {
             System.out.println("No available devices");
         }
         List<Product> matchingDevices = warehouse.filterByAttribute(input, "device");
-        printDevices(matchingDevices);
+        return matchingDevices;
     }
 
-    public void searchBySalePriceRange(String minPrice, String maxPrice) {
+    public List<Product> searchBySalePriceRange(String minPrice, String maxPrice) {
         if (warehouse.isEmpty()) {
             System.out.println("The warehouse is currently out of stock!");
         }
@@ -29,16 +29,16 @@ public class ResearchMethod {
             System.out.println("Minimum price can't be higher that maximum price!");
         }
         List<Product> matchingDevices = warehouse.filterBySaleRange(minPriceResearched, maxPriceResearched);
-        printDevices(matchingDevices);
+        return matchingDevices;
     }
 
-    public void searchByBrand(String input) {
+    public List<Product> searchByBrand(String input) {
         if (warehouse.isEmpty()) {
             System.out.println("The warehouse is currently out of stock!");
         }
         List<Product> matchingDevices = new ArrayList<Product>();
         matchingDevices = warehouse.filterByAttribute(input, "brand");
-        printDevices(matchingDevices);
+        return matchingDevices;
     }
 
     public List<Product> searchByModel(String input) {
@@ -64,7 +64,7 @@ public class ResearchMethod {
                     "\n \n");
         }
     }
-    public void searchByPurchasePriceRange(String minPrice, String maxPrice) {
+    public List<Product> searchByPurchasePriceRange(String minPrice, String maxPrice) {
         if (warehouse.isEmpty()) {
             System.out.println("The warehouse is currently out of stock!");
         }
@@ -74,6 +74,6 @@ public class ResearchMethod {
             System.out.println("Minimum price can't be higher that maximum price!");
         }
         List<Product> matchingDevices = warehouse.filterByPurchaseRange(minPriceResearched, maxPriceResearched);
-        printDevices(matchingDevices);
+        return matchingDevices;
     }
 }
