@@ -24,6 +24,8 @@ public class Product {
         this.id = id;
     }
 
+
+
     public Devices getDeviceType() {
         return deviceType;
     }

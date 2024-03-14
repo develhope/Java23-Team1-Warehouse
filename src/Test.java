@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Test {
     private ResearchMethod researchMethod;
-    private Warehouse warehouse;
+    //private Warehouse warehouse;
 
     public static void main(String[] args) {
         Product smartphone1 = new Product(Devices.SMARTPHONE, "Xiaomi", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
@@ -16,6 +16,8 @@ public class Test {
         Product smartphone2 = new Product(Devices.SMARTPHONE, "Xiaomi", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product tablet2 = new Product(Devices.TABLET, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product notebook2 = new Product(Devices.NOTEBOOK, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
+
+
         List<Product> products = new ArrayList<>();
         Warehouse warehouse = new Warehouse();
         ResearchMethod researchMethod = new ResearchMethod(warehouse);
@@ -25,6 +27,7 @@ public class Test {
         warehouse.addProductToStock(smartphone2);
         warehouse.addProductToStock(notebook1);
         warehouse.addProductToStock(notebook2);
+        System.out.println(warehouse);
         researchMethod.searchByBrand("SAMSUNG");
         products.add(smartphone1);
         products.add(smartphone2);
@@ -47,7 +50,7 @@ public class Test {
         productsInStock.finalizeSellingProcess(true, productsInCart);
         //System.out.println(productsInStock);
         //System.out.println(productsInCart);
-        System.out.println(researchMethod.search(new FilterByBrand("Xiaomi")));
+        //System.out.println(researchMethod.search(new FilterByBrand("Xiaomi")));
 
     }
 }

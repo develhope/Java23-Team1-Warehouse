@@ -8,13 +8,23 @@ public class Warehouse {
 
     private List<Product> devices;
 
+
     public void finalizeSellingProcess(boolean paymentCheck, Cart cart) {
         devices.removeAll(cart.getDevices());
         cart.getDevices().clear();
     }
 
-
+    //ho integrato la generazione di un id univoco per ogni prodotto quando viene aggiunto al magazzino che sovrascrive
+    // l'ID generico dato alla creazione del prodotto con uno indicizzato da 1 in crescendo.
     public void addProductToStock(Product product) {
+        product.setId(1);
+        int id = product.getId();
+        for (Product device : devices) {
+            if (device.getId() >= id) {
+                id = product.getId() + 1;
+            }
+            product.setId(id);
+        }
         devices.add(product);
     }
 
