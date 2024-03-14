@@ -16,7 +16,6 @@ public class Test {
         Product smartphone2 = new Product(Devices.SMARTPHONE, "Xiaomi", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product tablet2 = new Product(Devices.TABLET, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product notebook2 = new Product(Devices.NOTEBOOK, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
-<<<<<<< HEAD
         List<Product> products = new ArrayList<>();
         Warehouse warehouse = new Warehouse();
         ResearchMethod researchMethod = new ResearchMethod(warehouse);
@@ -33,7 +32,6 @@ public class Test {
         products.add(tablet2);
         products.add(notebook1);
         products.add(notebook2);
-=======
         Cart productsInCart = new Cart();
         Warehouse productsInStock = new Warehouse();
         productsInStock.addProductToStock(smartphone1);
@@ -42,17 +40,14 @@ public class Test {
         productsInStock.addProductToStock(tablet2);
         productsInStock.addProductToStock(notebook1);
         productsInStock.addProductToStock(notebook2);
-
-
         productsInCart.addProductInCart(smartphone1);
         productsInCart.addProductInCart(tablet1);
         productsInCart.addProductInCart(notebook1);
         boolean paymentCheck = true;
         productsInStock.finalizeSellingProcess(true, productsInCart);
-        System.out.println(productsInStock);
-        System.out.println(productsInCart);
->>>>>>> c780a81bb17fc74168f54f3a63c3d32d4501af1f
-
+        //System.out.println(productsInStock);
+        //System.out.println(productsInCart);
+        System.out.println(researchMethod.search(new FilterByBrand("Xiaomi")));
 
     }
 }
