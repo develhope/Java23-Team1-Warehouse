@@ -64,4 +64,14 @@ public class ResearchMethod {
                     "\n \n");
         }
     }
+
+    public List<Product> search(ProductFilter productFilter) {
+        List<Product> matchingDevices = new ArrayList<>();
+        for (Product product : warehouse.getProductsInStock()) {
+            if (productFilter.isInFilter(product)) {
+                matchingDevices.add(product);
+            }
+        }
+        return matchingDevices;
+    }
 }
