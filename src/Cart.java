@@ -46,17 +46,17 @@ public class Cart {
     }
 
     // RIMOZIONE DI UN ELEMENTO DAL CARRELLO TRAMITE ID
-    public List<Product> removeProductsInCartById() {
+    public List<Product> removeProductsInCartById(Cart cart, int id) {
         if (devices.isEmpty()) {
             System.out.println("The cart is empty.");
             return null;
         } else {
-            List<Product> updatedWareHouse =  ((Cart) devices).getDevices();
-            if (updatedWareHouse.isEmpty()) {
+            List<Product> updatedCart =  cart.getDevices();
+            if (updatedCart.isEmpty()) {
                 System.out.println("The cart is empty.");
                 return null;
             } else {
-                return updatedWareHouse;
+                return updatedCart;
             }
         }
     }
