@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import products.Devices;
 import products.Product;
 
 
@@ -46,20 +49,29 @@ public class Cart {
     }
 
     // RIMOZIONE DI UN ELEMENTO DAL CARRELLO TRAMITE ID
-    public List<Product> removeProductsInCartById(Cart cart, int id) {
-        if (devices.isEmpty()) {
-            System.out.println("The cart is empty.");
-            return null;
-        } else {
-            List<Product> updatedCart =  cart.getDevices();
-            if (updatedCart.isEmpty()) {
-                System.out.println("The cart is empty.");
-                return null;
-            } else {
-                return updatedCart;
-            }
-        }
-    }
+    // public List<Product> removeProductsInWarehouseByI(int id) {
+    //     for (Product device : devices){
+    //         if(device.getId() == id){
+    //             devices.remove(device);
+    //         }
+    //     }
+    //     return devices;
+    // }
+     public boolean removeProductsInWarehouseById(int id) {
+         boolean updateCart = false;
+         Iterator<Product> iterator = devices.iterator();
+
+         while(iterator.hasNext()) {
+             Product devices = iterator.next();
+             
+             if(devices.getId() == id) {
+                 iterator.remove();
+                 updateCart = true;
+                 break;
+             }
+         }
+         return updateCart;
+     }
 
     @Override
     public String toString() {
