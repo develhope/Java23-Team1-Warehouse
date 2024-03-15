@@ -47,7 +47,7 @@ public class Test {
         productsInStock.finalizeSellingProcess(true, productsInCart);
         //System.out.println(productsInStock);
         //System.out.println(productsInCart);
-        System.out.println(researchMethod.search(new FilterByBrand("Xiaomi")));
-
+        //System.out.println(researchMethod.search(new FilterByBrand("Xiaomi")));
+        System.out.println(researchMethod.search(new FilterByDevice("taBlet")));
     }
 }
