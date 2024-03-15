@@ -1,15 +1,14 @@
 import products.Product;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Warehouse {
 
+    private List<Product> devices;
 
-    private  List<Product> devices;
-    private final Cart cart;
-
-    public void finalizeSellingProcess (boolean paymentCheck){
+    public void finalizeSellingProcess(boolean paymentCheck, Cart cart) {
         devices.removeAll(cart.getDevices());
         cart.getDevices().clear();
     }
@@ -19,9 +18,8 @@ public class Warehouse {
         devices.add(product);
     }
 
-    public Warehouse(Cart cart) {
+    public Warehouse() {
         this.devices = new ArrayList<Product>();
-        this.cart= cart;
     }
 
     public List<Product> getProductsInStock() {
@@ -81,6 +79,16 @@ public class Warehouse {
                 "productsInStock=" + devices +
                 '}';
     }
-
-
+    public List<Product> filterByPurchaseRange(Integer minPrice, Integer maxPrice) {
+        if (minPrice == null || maxPrice == null) {
+            return null;
+        }
+        List<Product> matchingDevices = new ArrayList<>();
+        for (Product product : devices) {
+            if (product.getPurchasePrice() <= maxPrice && product.getPurchasePrice() >= minPrice) {
+                matchingDevices.add(product);
+            }
+        }
+        return matchingDevices;
+    }
 }
