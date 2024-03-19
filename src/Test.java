@@ -48,6 +48,6 @@ public class Test {
         //System.out.println(productsInStock);
         //System.out.println(productsInCart);
         //System.out.println(researchMethod.search(new FilterByBrand("Xiaomi")));
-        System.out.println(researchMethod.search(new FilterByDevice("taBlet")));
+        System.out.println(researchMethod.search(new FilterByPurchasePrice(80, 40)));
     }
 }
