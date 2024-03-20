@@ -49,5 +49,6 @@ public class Test {
         //System.out.println(productsInCart);
         //System.out.println(researchMethod.search(new FilterByBrand("Xiaomi")));
         System.out.println(researchMethod.search(new FilterByPurchasePrice(80, 40)));
+        System.out.println(researchMethod.search(new FilterBySalePrice(59, 23)));
     }
 }

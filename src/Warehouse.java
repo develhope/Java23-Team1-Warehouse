@@ -1,27 +1,20 @@
 import products.Product;
-
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Warehouse {
-
     private List<Product> devices;
-
     public void finalizeSellingProcess(boolean paymentCheck, Cart cart) {
         devices.removeAll(cart.getDevices());
         cart.getDevices().clear();
     }
-
-
     public void addProductToStock(Product product) {
         devices.add(product);
     }
-
     public Warehouse() {
         this.devices = new ArrayList<Product>();
     }
-
     public List<Product> getProductsInStock() {
         return devices;
     }
@@ -54,7 +47,6 @@ public class Warehouse {
 //        }
 //        return matchingDevices;
 //    }
-
 
     public List<Product> filterBySaleRange(Integer minPrice, Integer maxPrice) {
         if (minPrice == null || maxPrice == null) {
