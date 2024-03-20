@@ -11,7 +11,7 @@ public class Test {
 
     public static void main(String[] args) {
         Product smartphone1 = new Product(Devices.SMARTPHONE, "Xiaomi", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
-        Product tablet1 = new Product(Devices.TABLET, "Apple", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
+        Product tablet1 = new Product(Devices.TABLET, "Apple", "iPad", "Un tablet costoso", 200f, 1, 600, 1100, 1234);
         Product notebook1 = new Product(Devices.NOTEBOOK, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product smartphone2 = new Product(Devices.SMARTPHONE, "Xiaomi", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
         Product tablet2 = new Product(Devices.TABLET, "Samsung", "Mi A1", "Un cellulare vecchio", 150f, 1, 90, 130, 1234);
@@ -48,6 +48,6 @@ public class Test {
         //System.out.println(productsInStock);
         //System.out.println(productsInCart);
         //System.out.println(researchMethod.search(new FilterByBrand("Xiaomi")));
-        System.out.println(researchMethod.search(new FilterByDevice("taBlet")));
+        //System.out.println(researchMethod.search(new FilterByDevice("taBlet")));
     }
 }
