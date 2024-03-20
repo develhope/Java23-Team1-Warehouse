@@ -1,5 +1,6 @@
 import products.Product;
 
+import javax.naming.directory.InvalidSearchFilterException;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,35 +27,21 @@ public class Warehouse {
         return devices;
     }
 
-//    public List<Product> filterByAttribute(String input, String typeResearched) {
-//        List<Product> matchingDevices = new ArrayList<>();
-//        String inputToLowerCase = input.toLowerCase();
-//        for (Product product : devices) {
-//            String researchToLowerCase = "";
-//            switch (typeResearched) {
-//                case "brand":
-//                    researchToLowerCase = product.getBrand().toLowerCase();
-//                    break;
-//
-//                case "model":
-//                    researchToLowerCase = product.getModel().toLowerCase();
-//                    break;
-//
-//                case "device":
-//                    researchToLowerCase = String.valueOf(product.getDeviceType()).toLowerCase();
-//                    break;
-//
-//                default:
-//                    break;
-//
-//            }
-//            if (inputToLowerCase.equals(researchToLowerCase)) {
-//                matchingDevices.add(product);
-//            }
-//        }
-//        return matchingDevices;
-//    }
-
+    // Method that take a filter as parameter and cycle through the warehouse. If the product match the filter parameter and return true,
+    //it adds the product to a new list.
+    public List<Product> search(ProductFilter productFilter) {
+        List<Product> matchingDevices = new ArrayList<>();
+        try {
+            for (Product product : getProductsInStock()) {
+                if (productFilter.isInFilter(product)) {
+                    matchingDevices.add(product);
+                }
+            }
+        } catch (InvalidSearchFilterException e) {
+            System.out.println("Invalid research: " + e.getMessage());
+        }
+        return matchingDevices;
+    }
 
     public List<Product> filterBySaleRange(Integer minPrice, Integer maxPrice) {
         if (minPrice == null || maxPrice == null) {
