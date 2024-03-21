@@ -14,19 +14,30 @@ public class Warehouse {
         cart.getDevices().clear();
     }
 
-    //ho integrato la generazione di un id univoco per ogni prodotto quando viene aggiunto al magazzino che sovrascrive
-    // l'ID generico dato alla creazione del prodotto con uno indicizzato da 1 in crescendo.
+    //ho integrato la generazione di un id univoco per ogni prodotto quando viene aggiunto al magazzino che sovrascrive l'id generico dato alla creazione con uno indicizzato.
     public void addProductToStock(Product product) {
-        product.setId(1);
-        int id = product.getId();
-        for (Product device : devices) {
-            if (device.getId() >= id) {
-                id = product.getId() + 1;
-            }
-            product.setId(id);
-        }
+
+        setStockID(product);
         devices.add(product);
+
     }
+
+    public void setStockID(Product product) {
+        int id = 0;
+        if (devices.isEmpty()) {
+            product.setId(1);
+        } else {
+
+            for (Product device : devices) {
+                if (device.getId() >= id) {
+                    id = device.getId() + 1;
+                }
+                product.setId(id);
+            }
+        }
+
+    }
+
 
     public Warehouse() {
         this.devices = new ArrayList<Product>();
