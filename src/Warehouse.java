@@ -39,11 +39,4 @@ public class Warehouse {
         return devices;
     }
 
-    @Override
-    public String toString() {
-        return "Warehouse{" +
-                "productsInStock=" + devices +
-                '}';
-    }
-
 }
