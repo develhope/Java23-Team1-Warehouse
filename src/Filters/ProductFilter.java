@@ -1,3 +1,5 @@
+package Filters;
+
 import products.Product;
 
 import javax.naming.directory.InvalidSearchFilterException;

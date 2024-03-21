@@ -1,6 +1,6 @@
 import java.util.*;
 
-import products.Devices;
+import Filters.ProductFilter;
 import products.Product;
 
 import javax.naming.directory.InvalidSearchFilterException;
