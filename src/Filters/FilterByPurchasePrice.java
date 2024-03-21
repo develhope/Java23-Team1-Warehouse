@@ -1,8 +1,10 @@
-import products.Product;
+package Filters;
+
+import Products.Product;
 
 import javax.naming.directory.InvalidSearchFilterException;
 
-public class FilterByPurchasePrice implements ProductFilter{
+public class FilterByPurchasePrice implements ProductFilter {
 
     private float minPrice;
     private float maxPrice;

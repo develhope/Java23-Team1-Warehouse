@@ -1,8 +1,10 @@
-import products.Product;
+package Filters;
+
+import Products.Product;
 
 import java.util.Objects;
 
-public class FilterByModel implements ProductFilter{
+public class FilterByModel implements ProductFilter {
     private String input;
 
     public FilterByModel (String input) {

@@ -1,5 +1,7 @@
-import products.Devices;
-import products.Product;
+package Filters;
+
+import Products.Devices;
+import Products.Product;
 
 import java.util.Objects;
 

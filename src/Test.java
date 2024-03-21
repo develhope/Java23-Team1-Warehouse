@@ -1,5 +1,6 @@
-import products.Devices;
-import products.Product;
+import Filters.FilterByDevice;
+import Products.Devices;
+import Products.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +48,7 @@ public class Test {
         productsInStock.finalizeSellingProcess(true, productsInCart);
         //System.out.println(productsInStock);
         //System.out.println(productsInCart);
-        //System.out.println(researchMethod.search(new FilterByBrand("Xiaomi")));
+        //System.out.println(researchMethod.search(new Filters.FilterByBrand("Xiaomi")));
         System.out.println(researchMethod.search(new FilterByDevice(Devices.NOTEBOOK)));
     }
 }
