@@ -39,4 +39,15 @@ public class Warehouse {
         return devices;
     }
 
+    public boolean isEmpty() {
+        return devices.isEmpty();
+    }
+
+    @Override
+    public String toString() {
+        return "Warehouse{" +
+                "devices=" + devices +
+                '}';
+    }
+
 }
