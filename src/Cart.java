@@ -10,16 +10,6 @@ public class Cart {
     public Cart() {
         this.devices = new ArrayList<>();
     }
-     public List<Product> removeFromCartByID( int id) {
-
-        for (Product device :devices){
-            if(device.getId() == id){
-                devices.remove(device);
-            }
-        }
-        return devices;
-    }
-
 
     public List<Product> getDevices() {
         return devices;
