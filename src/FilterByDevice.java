@@ -1,17 +1,18 @@
+import products.Devices;
 import products.Product;
 
 import java.util.Objects;
 
 public class FilterByDevice implements ProductFilter {
 
-    private final String input;
+    private final Devices deviceType;
 
-    public FilterByDevice (String input) {
-        this.input = input.toUpperCase();
+    public FilterByDevice (Devices deviceType) {
+        this.deviceType = deviceType;
     }
 
     @Override
     public boolean isInFilter(Product product) {
-        return Objects.equals(input, String.valueOf(product.getDeviceType()));
+        return Objects.equals(deviceType, product.getDeviceType());
     }
 }
