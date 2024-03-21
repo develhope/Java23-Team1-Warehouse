@@ -1,6 +1,5 @@
-import products.Product;
+import Products.Product;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 

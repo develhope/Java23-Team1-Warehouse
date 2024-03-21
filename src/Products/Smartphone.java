@@ -1,4 +1,4 @@
-package products;
+package Products;
 
 public class Smartphone extends Product {
 

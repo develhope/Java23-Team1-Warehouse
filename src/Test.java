@@ -1,6 +1,6 @@
 import Filters.FilterByDevice;
-import products.Devices;
-import products.Product;
+import Products.Devices;
+import Products.Product;
 
 import java.util.ArrayList;
 import java.util.List;
