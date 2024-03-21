@@ -43,20 +43,6 @@ public class Warehouse {
         return matchingDevices;
     }
 
-    public List<Product> filterBySaleRange(Integer minPrice, Integer maxPrice) {
-        if (minPrice == null || maxPrice == null) {
-            return null;
-        }
-        List<Product> matchingDevices = new ArrayList<>();
-        for (Product product : devices) {
-            if (product.getSalePrice() <= maxPrice && product.getSalePrice() >= minPrice) {
-                matchingDevices.add(product);
-            }
-        }
-        return matchingDevices;
-    }
-
-
     public boolean isEmpty() {
         return devices.isEmpty();
     }
@@ -68,16 +54,4 @@ public class Warehouse {
                 '}';
     }
 
-    public List<Product> filterByPurchaseRange(Integer minPrice, Integer maxPrice) {
-        if (minPrice == null || maxPrice == null) {
-            return null;
-        }
-        List<Product> matchingDevices = new ArrayList<>();
-        for (Product product : devices) {
-            if (product.getPurchasePrice() <= maxPrice && product.getPurchasePrice() >= minPrice) {
-                matchingDevices.add(product);
-            }
-        }
-        return matchingDevices;
-    }
 }
