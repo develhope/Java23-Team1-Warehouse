@@ -1,4 +1,4 @@
-package products;
+package Products;
 
 public class Product {
     private Devices deviceType;

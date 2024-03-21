@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import products.Product;
+import Products.Product;
 
 
 public class Cart {

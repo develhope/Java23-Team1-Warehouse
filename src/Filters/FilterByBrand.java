@@ -1,4 +1,6 @@
-import products.Product;
+package Filters;
+
+import Products.Product;
 import java.util.Objects;
 
 public class FilterByBrand implements ProductFilter {

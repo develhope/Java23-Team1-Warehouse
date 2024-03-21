@@ -1,7 +1,9 @@
 import java.util.*;
 
-import products.Devices;
-import products.Product;
+import Filters.ProductFilter;
+import Products.Product;
+
+import javax.naming.directory.InvalidSearchFilterException;
 
 public class ResearchMethod {
 
@@ -69,10 +71,14 @@ public class ResearchMethod {
     //it adds the product to a new list.
     public List<Product> search(ProductFilter productFilter) {
         List<Product> matchingDevices = new ArrayList<>();
-        for (Product product : warehouse.getProductsInStock()) {
-            if (productFilter.isInFilter(product)) {
-                matchingDevices.add(product);
+        try {
+            for (Product product : warehouse.getProductsInStock()) {
+                if (productFilter.isInFilter(product)) {
+                    matchingDevices.add(product);
+                }
             }
+        } catch (InvalidSearchFilterException e) {
+            System.out.println("Invalid research: " + e.getMessage());
         }
         return matchingDevices;
     }
