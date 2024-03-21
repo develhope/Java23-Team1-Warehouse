@@ -10,18 +10,15 @@ public class Cart {
     public Cart() {
         this.devices = new ArrayList<>();
     }
+     public List<Product> removeFromCartByID( int id) {
 
-    //metodo geralizzato che verifica prima se si può finalizzare la vendita
-    // e poi procede svuotando il carrello e rimuovendo i device venduti dal magazzino;
-
-//    public static void finalizeSellingProcess(boolean paymentCheck, Warehouse warehouse, Cart cart) {
-//        if (paymentCheck) {
-//            warehouse.getProductsInStock().removeAll(cart.getProductsInCart());
-//            cart.getProductsInCart().clear();
-//        } else {
-//            System.out.println("you must first complete a form of payment");
-//        }
-//    }
+        for (Product device :devices){
+            if(device.getId() == id){
+                devices.remove(device);
+            }
+        }
+        return devices;
+    }
 
 
     public List<Product> getDevices() {
