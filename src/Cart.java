@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-
 import Products.Product;
-
 
 public class Cart {
     private List<Product> devices;
@@ -37,5 +35,6 @@ public class Cart {
                 "productsInCart=" + devices +
                 '}';
     }
+
 }
     
