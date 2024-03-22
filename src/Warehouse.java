@@ -1,3 +1,4 @@
+import Filters.FilterByDevice;
 import Products.Product;
 import javax.swing.*;
 import Filters.ProductFilter;
@@ -67,10 +68,16 @@ public class Warehouse {
         double totalPurchasePrice = 0.0;
         int numOfDevices = 0;
 
+        FilterByDevice deviceFilter = new FilterByDevice(deviceType);
+
         for (Product product : devices) {
-            if (product.getDeviceType() == deviceType) {
-                totalPurchasePrice += product.getPurchasePrice();
-                numOfDevices++;
+            try {
+                if (deviceFilter.isInFilter(product)) {
+                    totalPurchasePrice += product.getPurchasePrice();
+                    numOfDevices++;
+                }
+            } catch (Exception e) {
+                System.out.println("Errore nel filtro: " + e.getMessage());
             }
         }
 
