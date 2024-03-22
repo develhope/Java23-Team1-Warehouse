@@ -1,4 +1,4 @@
-package products;
+package Products;
 
 public enum Devices {
     NOTEBOOK,

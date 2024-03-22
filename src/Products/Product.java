@@ -1,4 +1,4 @@
-package products;
+package Products;
 
 public class Product {
     private Devices deviceType;
@@ -23,6 +23,7 @@ public class Product {
         this.salePrice = salePrice;
         this.id = id;
     }
+
     public Devices getDeviceType() {
         return deviceType;
     }
