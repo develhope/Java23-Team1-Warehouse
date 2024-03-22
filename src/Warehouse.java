@@ -64,26 +64,24 @@ public class Warehouse {
     public boolean isEmpty() {
         return devices.isEmpty();
     }
-    public double calculateAveragePurchasePriceByDeviceType(Devices deviceType) {
+    public double calculateAveragePurchasePriceByDeviceType(Devices deviceType) throws InvalidSearchFilterException {
         double totalPurchasePrice = 0.0;
         int numOfDevices = 0;
 
         FilterByDevice deviceFilter = new FilterByDevice(deviceType);
 
         for (Product product : devices) {
-            try {
                 if (deviceFilter.isInFilter(product)) {
                     totalPurchasePrice += product.getPurchasePrice();
                     numOfDevices++;
+                } else {
+                    throw new InvalidSearchFilterException ("Invalid filter");
                 }
-            } catch (Exception e) {
-                System.out.println("Errore nel filtro: " + e.getMessage());
-            }
         }
 
         if (numOfDevices == 0) {
-            System.out.println("Non ci sono dispositivi di tipo " + deviceType);
-            return 0.0; // Ritorna 0 se non ci sono dispositivi del tipo specificato
+            System.out.println("there aren't devices of kind: " + deviceType);
+            return 0.0;
         }
 
         return totalPurchasePrice / numOfDevices;
@@ -95,5 +93,4 @@ public class Warehouse {
                 "devices=" + devices +
                 '}';
     }
-
 }
