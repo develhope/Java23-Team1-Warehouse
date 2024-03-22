@@ -1,9 +1,12 @@
 import Filters.ProductFilter;
+import Products.Devices;
 import Products.Product;
 
 import javax.naming.directory.InvalidSearchFilterException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Warehouse {
     private List<Product> devices;
@@ -41,6 +44,24 @@ public class Warehouse {
 
     public boolean isEmpty() {
         return devices.isEmpty();
+    }
+    public double calculateAveragePurchasePriceByDeviceType(Devices deviceType) {
+        double totalPurchasePrice = 0.0;
+        int numOfDevices = 0;
+
+        for (Product product : devices) {
+            if (product.getDeviceType() == deviceType) {
+                totalPurchasePrice += product.getPurchasePrice();
+                numOfDevices++;
+            }
+        }
+
+        if (numOfDevices == 0) {
+            System.out.println("Non ci sono dispositivi di tipo " + deviceType);
+            return 0.0; // Ritorna 0 se non ci sono dispositivi del tipo specificato
+        }
+
+        return totalPurchasePrice / numOfDevices;
     }
 
     @Override
