@@ -67,15 +67,16 @@ public class Warehouse {
     public double calculateAveragePurchasePriceByDeviceType(Devices deviceType) throws InvalidSearchFilterException {
         double totalPurchasePrice = 0.0;
         int numOfDevices = 0;
-
+        if(devices.isEmpty()) {
+            throw new RuntimeException("Warehouse can't be empty");
+        }
         FilterByDevice deviceFilter = new FilterByDevice(deviceType);
+
 
         for (Product product : devices) {
                 if (deviceFilter.isInFilter(product)) {
                     totalPurchasePrice += product.getPurchasePrice();
                     numOfDevices++;
-                } else {
-                    throw new InvalidSearchFilterException ("Invalid filter");
                 }
         }
 
