@@ -1,3 +1,5 @@
+import Products.Product;
+import javax.swing.*;
 import Filters.ProductFilter;
 import Products.Product;
 
@@ -7,10 +9,6 @@ import java.util.List;
 
 public class Warehouse {
     private List<Product> devices;
-
-    public Warehouse() {
-        this.devices = new ArrayList<Product>();
-    }
 
     public List<Product> search(ProductFilter productFilter) {
         List<Product> matchingDevices = new ArrayList<>();
@@ -37,6 +35,9 @@ public class Warehouse {
         devices.add(product);
 
     }
+    public Warehouse() {
+        this.devices = new ArrayList<Product>();
+    }
 
     public void setStockID(Product product) {
         int id = 0;
@@ -53,12 +54,9 @@ public class Warehouse {
         }
 
     }
-
-
     public List<Product> getProductsInStock() {
         return devices;
     }
-
     public boolean isEmpty() {
         return devices.isEmpty();
     }
