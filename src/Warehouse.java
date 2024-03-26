@@ -64,7 +64,7 @@ public class Warehouse {
     public boolean isEmpty() {
         return devices.isEmpty();
     }
-    public double calculateAveragePurchasePriceByDeviceType(Devices deviceType) throws InvalidSearchFilterException {
+    public double calculateAveragePurchasePriceByDeviceType(Devices deviceType) {
         double totalPurchasePrice = 0.0;
         int numOfDevices = 0;
         if(devices.isEmpty()) {
