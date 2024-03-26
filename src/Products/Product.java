@@ -1,7 +1,7 @@
 package Products;
 
 public class Product {
-    private Devices deviceType;
+    private DeviceType deviceType;
     private String brand;
     private String model;
     private String description;
@@ -11,7 +11,7 @@ public class Product {
     private float salePrice;
     private int id;
 
-    public Product(Devices deviceType, String brand, String model, String description, float display, float storage,
+    public Product(DeviceType deviceType, String brand, String model, String description, float display, float storage,
                    float purchasePrice, float salePrice, int id) {
         this.deviceType = deviceType;
         this.brand = brand;
@@ -26,11 +26,11 @@ public class Product {
 
 
 
-    public Devices getDeviceType() {
+    public DeviceType getDeviceType() {
         return deviceType;
     }
 
-    public void setDeviceType(Devices deviceType) {
+    public void setDeviceType(DeviceType deviceType) {
         this.deviceType = deviceType;
     }
 
