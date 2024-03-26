@@ -1,32 +1,34 @@
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class WarehouseTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void search() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void finalizeSellingProcess() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void addProductToStock() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void setStockID() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getProductsInStock() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void isEmpty() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void calculateAveragePurchasePriceByDeviceType() {
     }
 }

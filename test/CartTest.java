@@ -1,20 +1,22 @@
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CartTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getDevices() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void addProductInCart() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void setProductsInCart() {
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getTotalPrice() {
     }
 }
