@@ -1,11 +1,15 @@
+import Filters.FilterByDevice;
 import Products.Product;
 import javax.swing.*;
 import Filters.ProductFilter;
+import Products.Devices;
 import Products.Product;
 
 import javax.naming.directory.InvalidSearchFilterException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Warehouse {
     private List<Product> devices;
@@ -60,6 +64,29 @@ public class Warehouse {
     public boolean isEmpty() {
         return devices.isEmpty();
     }
+    public double calculateAveragePurchasePriceByDeviceType(Devices deviceType) {
+        double totalPurchasePrice = 0.0;
+        int numOfDevices = 0;
+        if(devices.isEmpty()) {
+            throw new RuntimeException("Warehouse can't be empty");
+        }
+        FilterByDevice deviceFilter = new FilterByDevice(deviceType);
+
+
+        for (Product product : devices) {
+                if (deviceFilter.isInFilter(product)) {
+                    totalPurchasePrice += product.getPurchasePrice();
+                    numOfDevices++;
+                }
+        }
+
+        if (numOfDevices == 0) {
+            System.out.println("there aren't devices of kind: " + deviceType);
+            return 0.0;
+        }
+
+        return totalPurchasePrice / numOfDevices;
+    }
 
     @Override
     public String toString() {
@@ -67,5 +94,4 @@ public class Warehouse {
                 "devices=" + devices +
                 '}';
     }
-
 }
