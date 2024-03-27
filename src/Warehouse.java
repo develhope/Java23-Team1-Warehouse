@@ -91,7 +91,6 @@ public class Warehouse {
                 numOfDevices++;
             }
         }
-
         if (numOfDevices == 0) {
             System.out.println("there aren't devices of kind: " + deviceType);
             return 0.0;
