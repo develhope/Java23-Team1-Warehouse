@@ -24,6 +24,9 @@ public class Warehouse {
 
     public List<Product> search(ProductFilter productFilter) {
         List<Product> matchingDevices = new ArrayList<>();
+        if (devices.isEmpty()) {
+            return null;
+        }
         try {
             for (Product product : getProductsInStock()) {
                 if (productFilter.isInFilter(product)) {
