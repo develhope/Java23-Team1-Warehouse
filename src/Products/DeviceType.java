@@ -1,6 +1,6 @@
 package Products;
 
-public enum Devices {
+public enum DeviceType {
     NOTEBOOK,
     SMARTPHONE,
     TABLET

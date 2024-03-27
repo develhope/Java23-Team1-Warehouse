@@ -1,7 +1,7 @@
 package Products;
 
 public class Product {
-    private Devices deviceType;
+    private DeviceType deviceType;
     private String brand;
     private String model;
     private String description;
@@ -11,7 +11,7 @@ public class Product {
     private float salePrice;
     private int id;
 
-    public Product(Devices deviceType, String brand, String model, String description, float display, float storage,
+    public Product(DeviceType deviceType, String brand, String model, String description, float display, float storage,
                    float purchasePrice, float salePrice, int id) {
         this.deviceType = deviceType;
         this.brand = brand;
@@ -24,60 +24,78 @@ public class Product {
         this.id = id;
     }
 
-    public Devices getDeviceType() {
+    public DeviceType getDeviceType() {
         return deviceType;
     }
-    public void setDeviceType(Devices deviceType) {
+
+    public void setDeviceType(DeviceType deviceType) {
         this.deviceType = deviceType;
     }
+
     public String getBrand() {
         return brand;
     }
+
     public void setBrand(String brand) {
         this.brand = brand;
     }
+
     public String getModel() {
         return model;
     }
+
     public void setModel(String model) {
         this.model = model;
     }
+
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
+
     public float getDisplay() {
         return display;
     }
+
     public void setDisplay(float display) {
         this.display = display;
     }
+
     public float getStorage() {
         return storage;
     }
+
     public void setStorage(float storage) {
         this.storage = storage;
     }
+
     public float getPurchasePrice() {
         return purchasePrice;
     }
+
     public void setPurchasePrice(float purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
+
     public float getSalePrice() {
         return salePrice;
     }
+
     public void setSalePrice(float salePrice) {
         this.salePrice = salePrice;
     }
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     @Override
     public String toString() {
         return "Product{" +

@@ -1,15 +1,15 @@
 package Filters;
 
-import Products.Devices;
+import Products.DeviceType;
 import Products.Product;
 
 import java.util.Objects;
 
 public class FilterByDevice implements ProductFilter {
 
-    private final Devices deviceType;
+    private final DeviceType deviceType;
 
-    public FilterByDevice (Devices deviceType) {
+    public FilterByDevice (DeviceType deviceType) {
         this.deviceType = deviceType;
     }
 
