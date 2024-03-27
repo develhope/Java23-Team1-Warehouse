@@ -8,7 +8,7 @@ public class FilterByModel implements ProductFilter {
     private String input;
 
     public FilterByModel (String input) {
-        this.input = input.toLowerCase();
+        this.input = input.toUpperCase();
     }
 
     @Override

@@ -7,7 +7,7 @@ public class FilterByBrand implements ProductFilter {
     private String input;
 
     public FilterByBrand(String input) {
-        this.input = input.toLowerCase();
+        this.input = input.toUpperCase();
     }
 
     @Override
