@@ -7,7 +7,7 @@ import java.util.Objects;
 public class FilterByModel implements ProductFilter {
     private String input;
 
-    public FilterByModel (String input) {
+    public FilterByModel(String input) {
         this.input = input.toLowerCase();
     }
 

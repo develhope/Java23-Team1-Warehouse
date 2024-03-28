@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+
 import Products.Product;
 
 public class Cart {
@@ -15,6 +16,21 @@ public class Cart {
 
     public void addProductInCart(Product product) {
         devices.add(product);
+    }
+
+    //METODO CHE AGGIUNGE AL CARRELLO TRAMITE ID
+    public void addToCartById(int id, Cart cart) {
+        boolean foundId = false;
+        for (Product product : devices) {
+            if (product.getId() == id) {
+                cart.addProductInCart(product);
+                foundId = true;
+                break;
+            }
+        }
+        if (foundId) {
+            System.out.println("This product with ID " + id + "is not in our warehouse");
+        }
     }
 
     public void setProductsInCart(List<Product> productsInCart) {
@@ -35,6 +51,4 @@ public class Cart {
                 "productsInCart=" + devices +
                 '}';
     }
-
 }
-    

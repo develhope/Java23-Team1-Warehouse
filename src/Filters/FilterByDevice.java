@@ -9,7 +9,7 @@ public class FilterByDevice implements ProductFilter {
 
     private final DeviceType deviceType;
 
-    public FilterByDevice (DeviceType deviceType) {
+    public FilterByDevice(DeviceType deviceType) {
         this.deviceType = deviceType;
     }
 
