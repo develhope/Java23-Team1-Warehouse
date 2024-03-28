@@ -21,7 +21,6 @@ public class Warehouse {
         devices.removeIf(product -> product.getId() == id);
     }
 
-
     public List<Product> search(ProductFilter productFilter) {
         List<Product> matchingDevices = new ArrayList<>();
         try {
@@ -42,10 +41,8 @@ public class Warehouse {
     }
 
     public void addProductToStock(Product product) {
-
         setStockID(product);
         devices.add(product);
-
     }
 
     public Warehouse() {
@@ -57,7 +54,6 @@ public class Warehouse {
         if (devices.isEmpty()) {
             product.setId(1);
         } else {
-
             for (Product device : devices) {
                 if (device.getId() >= id) {
                     id = device.getId() + 1;
@@ -65,7 +61,6 @@ public class Warehouse {
                 product.setId(id);
             }
         }
-
     }
 
     public List<Product> getProductsInStock() {
@@ -84,7 +79,6 @@ public class Warehouse {
         }
         FilterByDevice deviceFilter = new FilterByDevice(deviceType);
 
-
         for (Product product : devices) {
             if (deviceFilter.isInFilter(product)) {
                 totalPurchasePrice += product.getPurchasePrice();
@@ -95,7 +89,6 @@ public class Warehouse {
             System.out.println("there aren't devices of kind: " + deviceType);
             return 0.0;
         }
-
         return totalPurchasePrice / numOfDevices;
     }
 
